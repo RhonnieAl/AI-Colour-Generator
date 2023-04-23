@@ -1,14 +1,20 @@
 require("dotenv").config();
-
-const aiCall = require("./openai");
+require("express-async-errors");
 
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3100;
 
+const aiCall = require("./openai");
+
+const notFoundMiddleware = require("./middleware/not-found");
+const errorMiddleware = require("./middleware/error-handler");
+
 //Middleware
 app.use(express.static("public"));
 app.use(express.json());
+app.use(notFoundMiddleware);
+app.use(errorMiddleware);
 
 app.get("/", (req, res) => {
   res.status(200).send("<h1>Home Page</h1>");
