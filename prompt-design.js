@@ -48,7 +48,7 @@ Response: ["#002F6C", "#FFFFFF"]
 ###Now answer the following prompt###
 
 
-Text: ${userPrompt}
+Text: "Holiday in Santorini"
 Response: 
 
 `;

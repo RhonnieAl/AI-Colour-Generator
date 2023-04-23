@@ -12,7 +12,7 @@ const aiCall = async (userPrompt) => {
 
     const response = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: prompt(userPrompt),
+      prompt: prompt,
       max_tokens: 200,
     });
 
