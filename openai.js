@@ -1,4 +1,5 @@
 require("dotenv").config();
+const prompt = require("./prompt-design");
 const { Configuration, OpenAIApi } = require("openai");
 
 const aiCall = async (userPrompt) => {
@@ -11,7 +12,7 @@ const aiCall = async (userPrompt) => {
 
     const response = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: "What is the colour of the sky?",
+      prompt: prompt(userPrompt),
       max_tokens: 200,
     });
 
