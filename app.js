@@ -9,11 +9,11 @@ const aiCall = require("./openai");
 
 const notFoundMiddleware = require("./middleware/not-found");
 const errorMiddleware = require("./middleware/error-handler");
-const { response } = require("express");
 
 //Middleware
 app.use(express.static("public"));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.status(200).send("<h1>Home Page</h1>");
@@ -22,11 +22,13 @@ app.get("/", (req, res) => {
 // The user request prompt
 app.post("/palette", async (req, res) => {
   // The OpenAI completion call
-  const response = await aiCall();
+
+  const userPrompt = req.body.userPrompt;
+  const response = await aiCall(userPrompt);
   console.log(response);
   console.log("Success! You have been PINGED!");
   // Return array of colors
-  res.status(200).json(response);
+  res.status(200).json({ response });
 });
 
 app.use(notFoundMiddleware);

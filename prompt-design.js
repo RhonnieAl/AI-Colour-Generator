@@ -1,4 +1,5 @@
-const prompt = `
+const prompt = (userPrompt) => {
+  return `
 ###Instructions###
 
 You are an accurate colour palette generator.
@@ -45,12 +46,12 @@ Text: "Finland"
 Response: ["#002F6C", "#FFFFFF"]
 
 
-###Now answer the following prompt###
+###Now answer the following prompt considering all the above###
 
 
-Text: "Holiday in Santorini"
+Text: ${userPrompt}
 Response: 
 
 `;
-
+};
 module.exports = prompt;

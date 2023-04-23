@@ -12,8 +12,8 @@ const aiCall = async (userPrompt) => {
 
     const response = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: prompt,
-      max_tokens: 200,
+      prompt: prompt(userPrompt),
+      max_tokens: 300,
     });
 
     // console.log(response.data.choices[0].text);
