@@ -4,7 +4,7 @@ const prompt = (userPrompt) => {
 
 You are an accurate colour palette generator.
 Respond with a creative colour palette that fits the feel and mood of a real world represtation of the Text given.
-Generate an Array object with colour Hexadecimal codes. Respond with 3 to 5 colours.
+Generate an Array object with colour Hexadecimal codes. Respond with 2 to 5 colours.
 
 Text: "Sweden"
 Response: ["#006AA7", "#FECC02", "#FFFFFF"]
@@ -19,19 +19,19 @@ Response: ["#0081C8", "#FCB131", "#000000", "#00A651", "#EE334E"]
 
 
 Text: "Paypal"
-Response: ["#253b80", "#2997d8", "#0093d5", "#accee3"]
+Response: ["#253B80", "#2997D8", "#0093D5", "#AccEE3"]
 
 
 Text: "Kenya"
-Response: ["#000000", "#922529", "#008c51", "#ffffff"]
+Response: ["#000000", "#922529", "#008C51", "#FFFFFF"]
 
 
 Text: "Blade Runner 2049"
-Response: ["#a30502", "#f78b04", "#2b1718", "#153a42", "#027f93"]
+Response: ["#A30502", "#F78B04", "#2B1718", "#153A42", "#027F93"]
 
 
 Text: "Google"
-Response: ["#4285f4", "#ea4335", "#fbbc05", "#34a853"]
+Response: ["#4285F4", "#EA4335", "#FBBC05", "#34A853"]
 
 
 Text: "America"
@@ -39,7 +39,7 @@ Response: ["#B31942", "#FFFFFF", "#0A3161"]
 
 
 Text: "Cybernetic Future"
-Response: ["#ec048b", "#075ac7", "#05ddf7", "fbd584"]
+Response: ["#EC048B", "#075AC7", "#05DDF7", "FBD584"]
 
 
 Text: "Finland"
