@@ -1,6 +1,10 @@
 # Ai Colour Generator
 
-This is an Ai colour palette generator app, powered by OpenAi.
+This is a fun AI web application. Find the perfect colour palette for your next
+project using the power of Ai.
+
+App built using : Backend in `Node Express.js`, Frontend in `HTML`, `CSS` and
+Vanilla Javasript, Ai in `GPT-3 model: text-davinci-003` by OpenAI.
 
 Input any colour palette you have in mind and get back Colors that matches the
 mood and feeling of your input.
@@ -72,9 +76,9 @@ Form submissions do not reload the page but are rerouted instead.
 
 ## Valid Queries
 
-When quering, use statements instead of questions. For example
+When quering, use statements instead of questions. For example:
 
-` coral reef colour palette` or ` Finnish Flag` or ` Neon colour palette`.
+`Coral reef palette`, `Finnish Flag` or `Neon colour palette`.
 
 ### Error Handling
 
@@ -89,5 +93,6 @@ the error with the help of `express-async-errors` to our custom error handler in
 `error-handler.js` and there do anything, for example show it on the console or
 return a message on the browser.
 
-Hobby Project maintined by [Rhonnie Allan](https://github.com/RhonnieAl)
 Inspired by Colt Steele.
+
+Hobby Project maintined by [Rhonnie Allan](https://github.com/RhonnieAl).
