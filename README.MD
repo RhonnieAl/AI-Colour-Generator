@@ -7,7 +7,7 @@ mood and feeling of your input.
 
 Try it now online (please allow for ~30 sec loading time):
 
-- https://store-api-rxgj.onrender.com
+- https://ai-palette-4u0t.onrender.com
 
 `CLICK` the colour to copy the Hexadecimal colour code to your clipboard.
 
