@@ -1,17 +1,22 @@
 This is an AI colour palette generator app.
 
-Input anything you want and it will return the colour palette that matches the
+Input any colour palette you have in mind and get back Colors that matches the
 mood and feeling of your input.
+
+### Frontend
+
+Frontend is HTML, CSS and vanilla JavaScript.
+
+An HTTP request is sent with the `userPrompt` that returns an array of colors.
+
+The colors object HExadecimal code is then extracted and displayed on the
+frontend
 
 ### HTTP Requests
 
-GET requests are received on the following endpoint:
-
-- `/` : Where the homepage is served
-
 POST requests are received on the following endpoint
 
-- `/palette` : Where user prompts are recieved, routed to OpenAI and responses
+- `/palette` : Where user-prompts are recieved, routed to OpenAI and responses
   served on the homepage
 
 Form submissions do not reload the page but are rerouted instead.
