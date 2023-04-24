@@ -23,6 +23,7 @@
         background-color: black;
         width: 100%;
         height: 100vh;
+        display: flex; /* allow blocl elements to share the space. (Not appear in long row) */
       }
       .color {
         height: 100%;
@@ -30,15 +31,11 @@
     </style>
   </head>
   <body>
-    <h1>This is an AI Colour Palette Generator</h1>
     <!-- Creeate a container div, to append colour divs to, later -->
     <div class="container"></div>
 
     <form id="form" action="/generate" method="POST">
-      <input
-        type="text"
-        name="userPrompt"
-        placeholder="Marimekko brand color palette" />
+      <input type="text" name="userPrompt" placeholder="Google Brand Colours" />
       <button type="submit">Generate</button>
     </form>
 
@@ -63,6 +60,8 @@
             console.log(colors);
             // Get the "container" div
             const container = document.querySelector(".container");
+            //Empty container for each new request
+            container.innerHTML = "";
             // Loop through all the returned colors, create a div for each one, and append it to the "container" div
             for (const color of colors) {
               // Make a new empty div for each color element returned
@@ -73,6 +72,16 @@
               div.style.backgroundColor = color;
               // Set the width of each color div to an equal percentage of the container div
               div.style.width = `calc(100%/${colors.length})`;
+
+              div.addEventListener("click", () => {
+                // Copy the color to the clipboard
+                navigator.clipboard.writeText(color);
+              });
+
+              // insert name of color in each div
+              const span = document.createElement("span");
+              span.innerText = color;
+              div.appendChild(span);
               container.appendChild(div);
             }
           });

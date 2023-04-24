@@ -3,13 +3,15 @@ This is an AI colour palette generator app.
 Input any colour palette you have in mind and get back Colors that matches the
 mood and feeling of your input.
 
+CLICK the colour to copy it to your clipboard.
+
 ### Frontend
 
 Frontend is HTML, CSS and vanilla JavaScript.
 
 An HTTP request is sent with the `userPrompt` that returns an array of colors.
 
-The colors object HExadecimal code is then extracted and displayed on the
+The colors object Hexadecimal codes are then extracted and displayed on the
 frontend
 
 ### HTTP Requests
