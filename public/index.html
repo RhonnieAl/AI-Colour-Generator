@@ -46,9 +46,45 @@
       .color span {
         /* Style the color text and position */
         font-size: 1.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
         color: white;
         text-shadow: 1px 1px black;
+      }
+
+      #form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      #form input[type="text"] {
+        font-size: 2rem;
+        outline: 0;
+        border: 2px solid rgb(222, 220, 220);
+        background-color: #f2f2f2;
+        border-radius: 6px;
+        padding: 20px 1rem;
+        margin-bottom: 1rem;
+      }
+      .btn {
+        background-color: #dbdceb;
+        padding: 20px 1rem;
+        font-size: 2rem;
+        color: rgb(57, 56, 56);
+        border: 2px solid rgb(196, 193, 193);
+        outline: 0;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.2 opacity ease-in-out;
+      }
+      .btn:hover {
+        filter: brightness(1.3);
       }
     </style>
   </head>
@@ -58,7 +94,7 @@
 
     <form id="form" action="/generate" method="POST">
       <input type="text" name="userPrompt" placeholder="Google Brand Colours" />
-      <button type="submit">Generate</button>
+      <button class="btn" type="submit">Generate</button>
     </form>
 
     <script>
@@ -79,7 +115,6 @@
           .then((data) => {
             // Extract "colors" array from the response
             const colors = data.colors;
-            console.log(colors);
             // Get the "container" div
             const container = document.querySelector(".container");
             //Empty container for each new request
@@ -95,12 +130,12 @@
               // Set the width of each color div to an equal percentage of the container div
               div.style.width = `calc(100%/${colors.length})`;
 
+              // Copy the color to the clipboard when the div is clicked
               div.addEventListener("click", () => {
-                // Copy the color to the clipboard
                 navigator.clipboard.writeText(color);
               });
 
-              // insert name of color in each div
+              // Insert name of color in each div
               const span = document.createElement("span");
               span.innerText = color;
               div.appendChild(span);

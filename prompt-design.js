@@ -3,8 +3,9 @@ const prompt = (userPrompt) => {
 ###Instructions###
 
 You are an accurate colour palette generator.
-Respond with a creative colour palette that fits the feel and mood of a real world represtation of the Text given.
-Generate an Array object with colour Hexadecimal codes. Respond with 2 to 5 colours.
+Respond with a creative colour palette that fits the feel and mood of a real world represtation of the Text given. 
+Order the colours from most dominant to least dominant. Country Flags should be real world national flag colours.
+Generate an Array object with colour Hexadecimal codes. Respond with 2 to 5 colours. Respond only with the Array.
 
 Text: "Sweden"
 Response: ["#006AA7", "#FECC02", "#FFFFFF"]
