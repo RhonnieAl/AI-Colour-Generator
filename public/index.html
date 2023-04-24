@@ -5,88 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Colour Palette Generator</title>
-    <style>
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        background-color: #f5f5f5;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        line-height: 1.5;
-        color: #333;
-      }
-      h1 {
-        font-size: 2em;
-        font-weight: 400;
-        line-height: 1.2;
-        margin: 0 0 0.5em;
-      }
-      .container {
-        background-color: black;
-        width: 100%;
-        height: 100vh;
-        display: flex; /* allow block elements to share the space. (Not appear in long row) */
-      }
-      .color {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        cursor: pointer;
-        transition: 0.2s opacity ease-in-out;
-      }
 
-      .color:active {
-        /* Indicate the action of a user clicking by changing opacity to 80% */
-        opacity: 0.8;
-      }
-      .color span {
-        /* Style the color text and position */
-        font-size: 1.5rem;
-        margin-bottom: 3rem;
-        color: white;
-        text-shadow: 1px 1px black;
-      }
-
-      #form {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-
-      #form input[type="text"] {
-        font-size: 2rem;
-        outline: 0;
-        border: 2px solid rgb(222, 220, 220);
-        background-color: #f2f2f2;
-        border-radius: 6px;
-        padding: 20px 1rem;
-        margin-bottom: 1rem;
-      }
-      .btn {
-        background-color: #dbdceb;
-        padding: 20px 1rem;
-        font-size: 2rem;
-        color: rgb(57, 56, 56);
-        border: 2px solid rgb(196, 193, 193);
-        outline: 0;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: 0.2 opacity ease-in-out;
-      }
-      .btn:hover {
-        filter: brightness(1.3);
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Creeate a container div, to append colour divs to, later -->
@@ -97,52 +17,6 @@
       <button class="btn" type="submit">Generate</button>
     </form>
 
-    <script>
-      const form = document.querySelector("#form");
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const userPrompt = form.elements.userPrompt.value;
-        fetch("/palette", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: new URLSearchParams({
-            userPrompt: userPrompt,
-          }),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            // Extract "colors" array from the response
-            const colors = data.colors;
-            // Get the "container" div
-            const container = document.querySelector(".container");
-            //Empty container for each new request
-            container.innerHTML = "";
-            // Loop through all the returned colors, create a div for each one, and append it to the "container" div
-            for (const color of colors) {
-              // Make a new empty div for each color element returned
-              const div = document.createElement("div");
-              // Sets the height of each color div to the height of the "container" div (100vh)
-              div.classList.add("color");
-              // Set the background color of each newly created color div to the color returned
-              div.style.backgroundColor = color;
-              // Set the width of each color div to an equal percentage of the container div
-              div.style.width = `calc(100%/${colors.length})`;
-
-              // Copy the color to the clipboard when the div is clicked
-              div.addEventListener("click", () => {
-                navigator.clipboard.writeText(color);
-              });
-
-              // Insert name of color in each div
-              const span = document.createElement("span");
-              span.innerText = color;
-              div.appendChild(span);
-              container.appendChild(div);
-            }
-          });
-      });
-    </script>
+    <script src="frontend.js"></script>
   </body>
 </html>

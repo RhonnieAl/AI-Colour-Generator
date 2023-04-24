@@ -28,17 +28,12 @@ app.post("/palette", async (req, res) => {
     console.log("WE RECEIVED: ", userPrompt);
 
     // The OpenAI completion call
-    /*     
     const aiResponse = await aiCall(userPrompt);
     console.log("aiResponse was: ", aiResponse);
 
     // Parse the openai response into an array object
     const response = {
       colors: JSON.parse(aiResponse),
-    };
- */
-    const response = {
-      colors: ["#FA4D4D", "#FF8B6B", "#FFC281", "#FAF7A2", "#F9F9D0"],
     };
 
     // Return array object of colors
