@@ -23,5 +23,35 @@
   </head>
   <body>
     <h1>This is an AI Colour Palette Generator</h1>
+
+    <form id="form" action="/generate" method="POST">
+      <input
+        type="text"
+        name="userPrompt"
+        placeholder="Marimekko brand color palette" />
+      <button type="submit">Generate</button>
+    </form>
+
+    <script>
+      const form = document.querySelector("#form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const userPrompt = form.elements.userPrompt.value;
+        fetch("/palette", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({
+            userPrompt: userPrompt,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
+      });
+    </script>
   </body>
 </html>
+vgt
