@@ -21,17 +21,25 @@ app.get("/", (req, res) => {
 
 // The user request prompt
 app.post("/palette", async (req, res) => {
+  console.log("You have been PINGED...");
   const userPrompt = req.body.userPrompt;
 
-  // The OpenAI completion call
-  const aiResponse = await aiCall(userPrompt);
-  // Parse the openai response into an array object
-  response = {
-    colors: JSON.parse(aiResponse),
-  };
-  console.log("Success! You have been PINGED!");
-  // Return array object of colors
-  res.status(200).json(response);
+  if (userPrompt) {
+    console.log("WE RECEIVED: ", userPrompt);
+
+    // The OpenAI completion call
+    const aiResponse = await aiCall(userPrompt);
+
+    // Parse the openai response into an array object
+    response = {
+      colors: JSON.parse(aiResponse),
+    };
+
+    // Return array object of colors
+    res.status(200).json(response);
+  } else {
+    console.log("NO PROMPT RECEIVED");
+  }
 });
 
 app.use(notFoundMiddleware);
