@@ -7,6 +7,13 @@ mood and feeling of your input.
 
 `CLICK` the colour to copy the Hexadecimal colour code to your clipboard.
 
+![Ai-Colour-Generator](https://github.com/RhonnieAl/AI-Colour-Generator/blob/master/screenshots/Screenshot1.png)
+
+The accuracy of chatGPT leaves something to be desired at times. Please allow
+for a couple tries if searching for something specific. Results may vary.
+
+![Ai-Colour-Generator](https://github.com/RhonnieAl/AI-Colour-Generator/blob/master/screenshots/Screenshot2.png)
+
 ### Frontend
 
 Frontend is HTML, CSS and vanilla JavaScript.
