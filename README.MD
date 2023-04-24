@@ -1,9 +1,11 @@
-This is an AI colour palette generator app.
+# Ai Colour Generator
+
+This is an Ai colour palette generator app, powered by OpenAi.
 
 Input any colour palette you have in mind and get back Colors that matches the
 mood and feeling of your input.
 
-CLICK the colour to copy it to your clipboard.
+`CLICK` the colour to copy the Hexadecimal colour code to your clipboard.
 
 ### Frontend
 
