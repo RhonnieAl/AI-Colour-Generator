@@ -9,9 +9,11 @@ Vanilla Javasript, Ai in `GPT-3 model: text-davinci-003` by OpenAI.
 Input any colour palette you have in mind and get back Colors that matches the
 mood and feeling of your input.
 
+## Try it now online
+
 Try it now online (please allow for ~30 sec loading time):
 
-- https://ai-palette-4u0t.onrender.com
+- https://hobbyapps.azurewebsites.net
 
 `CLICK` the colour to copy the Hexadecimal colour code to your clipboard.
 
