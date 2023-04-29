@@ -2,14 +2,14 @@ require("dotenv").config();
 const prompt = require("./prompt-design");
 const { Configuration, OpenAIApi } = require("openai");
 
+const configuration = new Configuration({
+  organization: process.env.OPENAI_API_ORG, //insert your own organisation code
+  apiKey: process.env.OPENAI_API_KEY, //Set your own api key by creating an OpenAI account
+});
+const openai = new OpenAIApi(configuration);
+
 const aiCall = async (userPrompt) => {
   try {
-    const configuration = new Configuration({
-      organization: process.env.OPENAI_API_ORG, //insert your own organisation code
-      apiKey: process.env.OPENAI_API_KEY, //Set your own api key by creating an OpenAI account
-    });
-    const openai = new OpenAIApi(configuration);
-
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: prompt(userPrompt),
