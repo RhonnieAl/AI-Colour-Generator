@@ -10,14 +10,13 @@ const aiCall = async (userPrompt) => {
     });
     const openai = new OpenAIApi(configuration);
 
-    const response = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: prompt(userPrompt),
+    const response = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: prompt(userPrompt),
       max_tokens: 300,
     });
-
-    // console.log(response.data.choices[0].text);
-    return response.data.choices[0].text;
+    console.log("WHAT WE RECEIVED: ", response.data.choices[0].message.content);
+    return response.data.choices[0].message.content;
   } catch (error) {
     if (error.response) {
       console.log(error.response.status);

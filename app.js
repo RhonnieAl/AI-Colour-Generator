@@ -21,23 +21,19 @@ app.get("/", (req, res) => {
 
 // The user request prompt
 app.post("/palette", async (req, res) => {
-  console.log("You have been PINGED...");
   const userPrompt = req.body.userPrompt;
-
   if (userPrompt) {
-    console.log("WE RECEIVED: ", userPrompt);
-
     // The OpenAI completion call
     const aiResponse = await aiCall(userPrompt);
-    console.log("aiResponse was: ", aiResponse);
-
+    console.log("THIS IS aiResponse", aiResponse);
     // Parse the openai response into an array object
     const response = {
       colors: JSON.parse(aiResponse),
     };
-
-    // Return array object of colors
+    console.log("THIS IS RESPONSE", response);
     res.status(200).json(response);
+    return;
+    // Return array object of colors
   } else {
     console.log("NO PROMPT RECEIVED");
   }
