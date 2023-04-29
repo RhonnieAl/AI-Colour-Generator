@@ -4,7 +4,12 @@ This is a fun AI web application. Find the perfect colour palette for your next
 project using the power of Ai.
 
 App built using : Backend in `Node Express.js`, Frontend in `HTML`, `CSS` and
-Vanilla Javasript, Ai in `GPT-3 model: text-davinci-003` by OpenAI.
+Vanilla Javasript.
+
+Ai model changed from `GPT-3 model: text-davinci-003` to `gpt-3.5-turbo` due to
+costs.`gpt-3.5-turbo` is 10 times cheaper, faster and newer. Only drawback is
+that `gpt-3.5-turbo` uses the "chat API endpoint" which is a bit more
+inconvenient than the "completion endpoint".
 
 Input any colour palette you have in mind and get back Colors that matches the
 mood and feeling of your input.
